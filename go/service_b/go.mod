@@ -1,4 +1,4 @@
-module github.com/k-akari/opentelemetry-sample/go/grpc_server_a
+module github.com/k-akari/opentelemetry-sample/go/service_b
 
 go 1.22.0
 
