@@ -1,4 +1,4 @@
-package grpcconfig
+package grpcutil
 
 import (
 	"context"

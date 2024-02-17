@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "go.formatTool": "goimports",
+  "go.toolsManagement.checkForUpdates": "off",
+  "go.useLanguageServer": true,
+  "editor.formatOnSaveMode": "file",
+  "[go]": {
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.guides.bracketPairs": "active",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  }
+}
