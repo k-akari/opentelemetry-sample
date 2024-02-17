@@ -8,20 +8,22 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/k-akari/opentelemetry-sample/go/grpc_server_a/internal/handler"
+	"github.com/k-akari/opentelemetry-sample/go/service_b/internal/handler"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/health"
 	healthpb "google.golang.org/grpc/health/grpc_health_v1"
 	"google.golang.org/grpc/reflection"
 
 	"github.com/k-akari/opentelemetry-sample/go/common/grpcutil"
 	pb "github.com/k-akari/opentelemetry-sample/go/proto/service_b/v1"
+	cpb "github.com/k-akari/opentelemetry-sample/go/proto/service_c/v1"
 )
 
 const (
 	exitFail    = 1
-	serviceName = "grpc_server_a"
+	serviceName = "service_b_api"
 )
 
 func main() {
@@ -47,7 +49,18 @@ func run(ctx context.Context, l *zap.Logger) error {
 	hs.SetServingStatus("", healthpb.HealthCheckResponse_NOT_SERVING)
 	healthpb.RegisterHealthServer(s, hs)
 
-	h := handler.NewUserServiceHandler()
+	serviceCAPIConn, err := grpc.Dial(
+		env.ServiceCAPIEndpoint,
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+	)
+	if err != nil {
+		return fmt.Errorf("failed to connect to document-ocr: %w", err)
+	}
+	defer serviceCAPIConn.Close()
+	l.Info("Successfully connected to api server of service c.")
+	capi := cpb.NewUserServiceClient(serviceCAPIConn)
+
+	h := handler.NewUserServiceHandler(capi)
 	pb.RegisterUserServiceServer(s, h)
 	l.Info("Successfully registered handler.")
 

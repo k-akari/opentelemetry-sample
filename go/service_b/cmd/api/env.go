@@ -8,6 +8,7 @@ import (
 
 type env struct {
 	Port uint16 `envconfig:"PORT" default:"9080"`
+	ServiceCAPIEndpoint string `envconfig:"SERVICE_C_ENDPOINT" default:"service-c.namespace-c.svc.cluster.local:5000"`
 }
 
 func newEnv() (*env, error) {
