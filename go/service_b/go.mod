@@ -11,7 +11,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
 	github.com/k-akari/opentelemetry-sample/go/common/grpcutil v0.0.0-20240217172612-2a1f468726f8 // indirect
-	github.com/k-akari/opentelemetry-sample/go/proto v0.0.0-20240217172612-2a1f468726f8 // indirect
+	github.com/k-akari/opentelemetry-sample/go/proto v0.0.0-20240217182544-be5afaf2303e // indirect
 	github.com/matttproud/golang_protobuf_extensions/v2 v2.0.0 // indirect
 	github.com/prometheus/client_golang v1.18.0 // indirect
 	github.com/prometheus/client_model v0.5.0 // indirect

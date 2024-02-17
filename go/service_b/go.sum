@@ -36,6 +36,8 @@ github.com/k-akari/opentelemetry-sample/go/common/grpcutil v0.0.0-20240217172612
 github.com/k-akari/opentelemetry-sample/go/common/grpcutil v0.0.0-20240217172612-2a1f468726f8/go.mod h1:dMgFaWAvfp5OKByN5t3xBBv3Qbokb/w/TGSXScFHS5M=
 github.com/k-akari/opentelemetry-sample/go/proto v0.0.0-20240217172612-2a1f468726f8 h1:Y6yPNS2rGx67/sH0n4qmtsbrX/xW/DhixEg53p0hZrM=
 github.com/k-akari/opentelemetry-sample/go/proto v0.0.0-20240217172612-2a1f468726f8/go.mod h1:Jt/LMFUYo+tPIE5YC0DCNnCuyUAel21JMngDCAs6Vt4=
+github.com/k-akari/opentelemetry-sample/go/proto v0.0.0-20240217182544-be5afaf2303e h1:KaCsm6EsTnIMjmyidtFNMVRLMW2Wq7lnl2i3JB64uLY=
+github.com/k-akari/opentelemetry-sample/go/proto v0.0.0-20240217182544-be5afaf2303e/go.mod h1:Jt/LMFUYo+tPIE5YC0DCNnCuyUAel21JMngDCAs6Vt4=
 github.com/kelseyhightower/envconfig v1.4.0 h1:Im6hONhd3pLkfDFsbRgu68RDNkGF1r3dvMUtDTo2cv8=
 github.com/kelseyhightower/envconfig v1.4.0/go.mod h1:cccZRl6mQpaq41TPp5QxidR+Sa3axMbJDNb//FQX6Gg=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
