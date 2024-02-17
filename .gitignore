@@ -1,0 +1,7 @@
+.idea/
+#**/dist/*
+
+# vscode
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.sample.json

@@ -1,0 +1,22 @@
+name: test
+
+on:
+  workflow_call:
+    inputs:
+      GO_WORKING_DIR:
+        required: true
+        type: string
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: golang:1.22.0
+    steps:
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+    - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
+      with:
+        go-version-file: "${{ inputs.GO_WORKING_DIR }}/go.mod"
+    - run: go test ./... -coverprofile=coverage.out
+    - name: report coverage
+      uses: k1LoW/octocov-action@5213913fe329368ab9dafa16f18f4f3cce1062f0 # v0.54.6

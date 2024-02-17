@@ -1,0 +1,42 @@
+---
+version: 2
+updates:
+  - package-ecosystem: "gomod"
+    directory: "/go/grpc_server_a"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "Asia/Tokyo"
+  - package-ecosystem: "gomod"
+    directory: "/go/grpc_server_b"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gomod"
+    directory: "/go/http_server_a"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "Asia/Tokyo"
+  - package-ecosystem: "gomod"
+    directory: "/go/proto"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "Asia/Tokyo"
+  - package-ecosystem: "docker"
+    directory: ".devcontainer"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "08:00"
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 10
