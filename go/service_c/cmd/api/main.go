@@ -15,8 +15,8 @@ import (
 	"google.golang.org/grpc/reflection"
 
 	"github.com/k-akari/opentelemetry-sample/go/common/grpcutil"
-	"github.com/k-akari/opentelemetry-sample/go/grpc_server_b/internal/handler"
-	pb "github.com/k-akari/opentelemetry-sample/go/proto/grpc_server_b/v1"
+	pb "github.com/k-akari/opentelemetry-sample/go/proto/service_c/v1"
+	"github.com/k-akari/opentelemetry-sample/go/service_c/internal/handler"
 )
 
 const (

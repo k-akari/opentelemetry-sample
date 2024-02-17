@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 
-	pb "github.com/k-akari/opentelemetry-sample/go/proto/grpc_server_b/v1"
+	pb "github.com/k-akari/opentelemetry-sample/go/proto/service_c/v1"
 )
 
 type UserServiceHandler struct {
