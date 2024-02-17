@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package grpc_server_a.v1;
+option go_package = "grpc_server_a/v1;grpc_server_a";
+
+import "google/protobuf/timestamp.proto";
+
+service UserService {
+  rpc Get(GetRequest) returns (GetResponse) {}
+}
+
+message GetRequest {
+  int32 user_id = 1;
+}
+message GetResponse {
+  User user = 1;
+}
+
+message User {
+  int32 user_id = 1;
+  string user_name = 2;
+  google.protobuf.Timestamp created_at = 98;
+  google.protobuf.Timestamp updated_at = 99;
+}
