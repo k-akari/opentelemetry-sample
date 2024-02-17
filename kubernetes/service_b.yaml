@@ -1,0 +1,64 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: grpc_server_a
+  namespace: grpc_server_a
+  labels:
+    app.kubernetes.io/name: grpc_server_a
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpc_server_a
+  namespace: grpc_server_a
+  labels:
+    app.kubernetes.io/name: grpc_server_a
+spec:
+  type: NodePort
+  ports:
+    - port: 5000
+      targetPort: 9080
+      protocol: TCP
+      name: grpc
+  selector:
+    app.kubernetes.io/name: grpc_server_a
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc_server_a
+  namespace: service_a
+  labels:
+    app.kubernetes.io/name: grpc_server_a
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: grpc_server_a
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: grpc_server_a
+          image: grpc_server_a:latest
+          imagePullPolicy: Never
+          ports:
+            - name: grpc
+              containerPort: 9080
+              protocol: TCP
+          livenessProbe:
+            exec:
+              command: ["/bin/grpc_health_probe", "-addr=:9080"]
+            initialDelaySeconds: 60
+          readinessProbe:
+            exec:
+              command: ["/bin/grpc_health_probe", "-addr=:9080"]
+            initialDelaySeconds: 60
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 20m
+              memory: 48Mi

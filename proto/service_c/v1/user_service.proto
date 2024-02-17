@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-package grpc_server_b.v1;
-option go_package = "grpc_server_b/v1;grpc_server_b";
+package service_c.v1;
+option go_package = "service_c/v1;service_c";
 
 import "google/protobuf/timestamp.proto";
 
